@@ -51,7 +51,7 @@ location /websshpath/ {
     proxy_set_header X-Real-IP $remote_addr;  
     proxy_set_header X-Real-PORT $remote_port;  
     proxy_set_header X-Forwarded-For $remote_addr;  
-没有CDN情况下，即只是解析DNS，CF小云朵灰色情况下，千万要上面3行  
+没有CDN情况下，即只是解析DNS，CF小云朵灰色情况下，千万要写上面3行  
   
 检查nginx配置是否有误  
 #nginx -t  
@@ -70,7 +70,7 @@ webssh就会在前台运行，不断显示log条目，这里仅是测试运行�
 这时可以在任意浏览器上输入https://www.yourdomain.com/websshpath  
 由于是https方式访问，所以安全性是保证的，当然大家不放心可以点浏览器地址栏的小锁头，确认证书是否是你之前签发的  
   
-理论上应该可以打开一个web页面让你输入机器名字（一般输入127.0.0.1，也可以输入同一私有网段的其他服务器ip地址），ssh端口，用户名，密码，点connect的图标即可显示ssh终端登录后的画面  
+理论上应该可以打开一个web页面让你输入机器名字（一般输入127.0.0.1，也可以输入同一私有网段的其他服务器ip地址），ssh端口，用户名，密码，点connect的图标即可显示ssh终端登录后的画面，这个web页面也是支持私钥方式登录的，你可以选私钥文件提交  
   
 确认能够使用后，在之前linux服务器的终端控制台打入CTRL-C，终止wssh的运行，然后按照下面步骤写成服务方式  
   
