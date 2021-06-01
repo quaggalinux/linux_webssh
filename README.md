@@ -1,16 +1,17 @@
 # linux_webssh  
 使用web方式访问linux服务器的ssh，支持websocket方式反代不影响域名原来的页面服务   
   
-  
-前端时间有机友问是否可以用web方式访问linux服务器的ssh，于是折腾一下，填平了一些坑，记录过程   
+这个方案优势是支持Cloudflare的CDN方式，这样就妙用无穷了，利用CDN可以让IPv4的客户端用浏览器ssh到IPv6 only或IPv4 nat有公网IPv6的小鸡，另外利用CDN可以SSH连接到原来不能直接连接的小鸡   
+   
+缘于前段时间有机友问是否可以用web方式访问linux服务器的ssh，于是折腾一下，填平了一些坑，记录过程   
    
 以下使用ubuntu为例子进行配置    
    
-首先安装wssh,期间可能提示安装python3-pip或python-pip，如果没有提示就直接安装好了   
+首先安装wssh,期间可能提示先要安装python3-pip或python-pip，如果没有提示就直接安装好了   
    
 #pip install webssh   
    
-如果有安装前置要求的按提示安装下面的包   
+如果有安装前提要求的按提示安装下面的包   
 #apt install python3-pip  
 或  
 #apt install python-pip  
