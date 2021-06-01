@@ -40,7 +40,7 @@ location /websshpath/ {
     proxy_set_header X-Forwarded-For $remote_addr;  
     }  
   
-    listen [::]:443 ssl; # managed by Certbot  
+    listen 443 ssl; # managed by Certbot  
     ssl_certificate /etc/letsencrypt/live/www.yourdomain.com/fullchain.pem; # managed by Certbot  
     ssl_certificate_key /etc/letsencrypt/live/www.yourdomain.com/privkey.pem; # managed by Certbot  
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot  
